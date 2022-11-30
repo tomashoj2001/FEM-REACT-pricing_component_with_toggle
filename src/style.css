@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline: red 1px solid; */
+}
+
+:root {
+  --Linear-Gradient-0deg: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  --Linear-Gradient-90deg: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  --Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+  --Light-Grayish-Blue: hsl(234, 14%, 74%);
+  --Grayish-Blue: hsl(233, 13%, 49%);
+  --Dark-Grayish-Blue: hsl(232, 13%, 33%);
+  --Font: 'Montserrat', sans-serif;
+}
+
+html {
+  text-align: center;
+  color: var(--Grayish-Blue);
+  font-size: 15px;
+  font-family: var(--Font);
+  background-color: var(--Very-Light-Grayish-Blue);
+  background-image: url(assets/images/bg-top.svg);
+  background-repeat: no-repeat;
+  background-position: 50vw -5vh;
+}
+
+h1 {
+  padding: 2rem 0;
+  color: var(--Dark-Grayish-Blue);
+}
+
+.toggle {
+  display: flex;
+  gap: 1.5em;
+  justify-content: center;
+}
+
+.toggle button {
+  color: inherit;
+  font-family: var(--Font);
+  background-color: transparent;
+  border: none;
+}
+
+section {
+  margin-top: 4rem;
+}
+
+.card {
+  width: 90%;
+  margin: 2rem auto;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: .35rem;
+  box-shadow: 0px 0px 50px -20px rgba(0,0,0,0.75);
+}
+
+.card__type {
+  font-size: 1.5rem;
+}
+
+.card__price {
+  font-size: 4rem;
+  color: var(--Dark-Grayish-Blue);
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--Light-Grayish-Blue);
+}
+
+.card p {
+  border-bottom: 1px solid var(--Light-Grayish-Blue);
+  padding: 1rem;
+}
+
+.card__btn {
+  width: 100%;
+  font-family: var(--Font);
+  color: var(--Very-Light-Grayish-Blue);
+  background-image: var(--Linear-Gradient-90deg);
+  border: none;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-radius: .35rem;
+}
+
+.card:nth-child(2) {
+  background-image: var(--Linear-Gradient-0deg);
+  color: var(--Very-Light-Grayish-Blue);
+}
+
+.card:nth-child(2) .card__price {
+  color: var(--Very-Light-Grayish-Blue);
+  color: white;
+}
+
+.card:nth-child(2) .card__btn {
+  color: hsl(237, 63%, 64%);
+  background-image: none;
+  background-color: var(--Very-Light-Grayish-Blue);
+}
+
+@media screen and (min-width: 800px) {
+  html {
+    background-image: url(assets/images/bg-top.svg);
+    background-position: 75vw 0vh;
+  }
+
+  html::before {
+    content: "";
+    display: block;
+    position: fixed;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(assets/images/bg-bottom.svg);
+    background-repeat: no-repeat;
+    background-position: 0 60vh;
+  }
+  
+  h1 {
+    padding: 2.5rem 0;
+  }
+  
+  .toggle {
+    gap: 2em;
+  }
+  
+  .toggle button {
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  section {
+    margin: auto;
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    width: 80vw;
+  }
+  
+  .card {
+    height: 90%;
+    margin: 0;
+    padding: 2rem;
+    border-radius: .75rem;
+  }
+  
+  .card__price {
+    padding: 1.5rem 0;
+  }
+  
+  .card p {
+    padding: 1.25rem;
+  }
+  
+  .card__btn {
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: all .4s;
+  }
+  
+  .card__btn:hover {
+    color: hsl(237, 63%, 64%);
+    background-color: transparent;
+    background-image: none;
+    outline: 2px solid hsl(237, 63%, 64%);
+  }
+
+  .card:nth-child(2) {
+    height: calc(90% + 3rem);
+    padding: 3.5rem 2rem;
+  }
+  
+  .card:nth-child(2) .card__btn:hover {
+    color: var(--Very-Light-Grayish-Blue);
+    background-color: transparent;
+    background-image: none;
+    outline: 2px solid var(--Very-Light-Grayish-Blue);
+  }
+
+  .card:nth-child(1) {
+    border-radius: .75rem 0 0 .75rem;
+  }
+
+  .card:nth-child(3) {
+    border-radius: 0 .75rem .75rem 0;
+  }
+}
